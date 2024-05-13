@@ -1,0 +1,108 @@
+﻿<UserControl x:Class="Template.WPF.Views.DictionaryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Template.WPF.Views"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <WrapPanel Grid.Row="0" HorizontalAlignment="Center">
+            <TextBox Width="100" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" />
+            <Button Margin="5 0 0 0"
+                    Command="{Binding GetDefinitionCommand}"
+                    Content="Get Definition" />
+        </WrapPanel>
+
+        <TextBlock Grid.Row="1" Margin="0 10 0 0"
+                   HorizontalAlignment="Center"
+                   DataContext="{Binding ErrorMessageViewModel}"
+                   Foreground="DarkRed"
+                   Text="{Binding Message}"
+                   Visibility="{Binding HasMessage, Converter={StaticResource BooleanToVisibilityConverter}}" />
+
+        <TextBlock Grid.Row="2" Margin="0 10 0 0"
+                   HorizontalAlignment="Center"
+                   DataContext="{Binding StatusMessageViewModel}"
+                   Foreground="DarkGreen"
+                   Text="{Binding Message}"
+                   Visibility="{Binding HasMessage, Converter={StaticResource BooleanToVisibilityConverter}}" />
+
+        <StackPanel Grid.Row="3">
+            <!-- Word -->
+            <TextBlock Text="{Binding WordDefinition.Word}" />
+
+            <!-- Phonetics -->
+            <ItemsControl ItemsSource="{Binding WordDefinition.Phonetics}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="{Binding Text}" />
+                            <TextBlock Text="{Binding Audio}" />
+                            <TextBlock Text="{Binding SourceUrl}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <!-- Meanings -->
+            <ItemsControl ItemsSource="{Binding WordDefinition.Meanings}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding PartOfSpeech}" />
+                            <ItemsControl ItemsSource="{Binding Definitions}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding DefinitionText}" />
+                                            <TextBlock Text="{Binding Example}" />
+                                            <Separator />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                            <ItemsControl ItemsSource="{Binding Synonyms}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding}" />
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                            <ItemsControl ItemsSource="{Binding Antonyms}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding}" />
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <!-- License -->
+            <TextBlock Text="{Binding WordDefinition.License.Name}" />
+            <TextBlock Text="{Binding WordDefinition.License.Url}" />
+
+            <!-- Source URLs -->
+            <ItemsControl ItemsSource="{Binding WordDefinition.SourceUrls}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+    </Grid>
+</UserControl>
