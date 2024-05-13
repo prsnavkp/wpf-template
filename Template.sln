@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.WPF", "Template\Template.WPF.csproj", "{9112E770-8778-47D4-8BA4-322081CB14EF}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HamburgerMenuControl", "HamburgerMenuControl\HamburgerMenuControl.csproj", "{5075ED86-7B81-4A00-8459-DA571DB4A7A9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.Domain", "Template.Domain\Template.Domain.csproj", "{CDA1BB5A-79F1-401C-AE82-544E13507411}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.EntityFramework", "Template.EntityFramework\Template.EntityFramework.csproj", "{150A2C70-140B-4E0A-B4C3-726EF175E580}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template.ModelingAPI", "Template.ModelingAPI\Template.ModelingAPI.csproj", "{EFD953F0-9EE5-4495-A3F7-C3F9430D9016}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.ModelingAPI", "Template.ModelingAPI\Template.ModelingAPI.csproj", "{EFD953F0-9EE5-4495-A3F7-C3F9430D9016}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.WPF", "Template.WPF\Template.WPF.csproj", "{FB0A57ED-EE46-41EF-B732-6FD7CDB26922}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9112E770-8778-47D4-8BA4-322081CB14EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9112E770-8778-47D4-8BA4-322081CB14EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9112E770-8778-47D4-8BA4-322081CB14EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9112E770-8778-47D4-8BA4-322081CB14EF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5075ED86-7B81-4A00-8459-DA571DB4A7A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5075ED86-7B81-4A00-8459-DA571DB4A7A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5075ED86-7B81-4A00-8459-DA571DB4A7A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{EFD953F0-9EE5-4495-A3F7-C3F9430D9016}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFD953F0-9EE5-4495-A3F7-C3F9430D9016}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFD953F0-9EE5-4495-A3F7-C3F9430D9016}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB0A57ED-EE46-41EF-B732-6FD7CDB26922}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB0A57ED-EE46-41EF-B732-6FD7CDB26922}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB0A57ED-EE46-41EF-B732-6FD7CDB26922}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB0A57ED-EE46-41EF-B732-6FD7CDB26922}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
