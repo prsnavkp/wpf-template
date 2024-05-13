@@ -1,6 +1,6 @@
 # Template
 
-WPF App Template: A WPF application featuring a Hamburger menu, Entity Framework, Dependency Injection via Microsoft Hosting, Web API consumption, and adherence to the MVVM design pattern.
+WPF App Template: A WPF application featuring a Hamburger menu, Entity Framework, Dependency Injection via Microsoft Hosting, Web API consumption, and MVVM design pattern.
 
 Sample Dictionary Application.
 
