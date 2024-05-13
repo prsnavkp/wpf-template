@@ -14,5 +14,4 @@ Update-Database <br />
 
 Register and log in to access the Hamburger menu and Dictionary search functionality.
 
-Thanks <br /> 
-[@SingletonSean](https://github.com/SingletonSean)
+A huge thank you to [@SingletonSean](https://github.com/SingletonSean)
