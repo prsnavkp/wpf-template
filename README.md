@@ -6,12 +6,13 @@ Sample Dictionary Application.
 
 ![Alt text](image.png)
 
-For database migration, set Template.Domain as the Default Project in the Package Manager Console and execute:
-Add-Migration InitialCreate
-Update-Database
+For database migration, set Template.Domain as the Default Project in the Package Manager Console and execute: <br />
+Add-Migration InitialCreate <br />
+Update-Database <br />
 
 [Entity Framework documentation](https://learn.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=vs)
 
 Register and log in to access the Hamburger menu and Dictionary search functionality.
 
-Thanks [@SingletonSean](https://github.com/SingletonSean)
+Thanks <br /> 
+[@SingletonSean](https://github.com/SingletonSean)
