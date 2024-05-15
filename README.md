@@ -4,7 +4,7 @@ WPF App Template: A WPF application featuring a Hamburger menu, Entity Framework
 
 Sample Dictionary Application.
 
-![Alt text](image.png)
+![alt text](image-1.png)
 
 For database migration, set Template.Domain as the Default Project in the Package Manager Console and execute: <br />
 Add-Migration InitialCreate <br />
