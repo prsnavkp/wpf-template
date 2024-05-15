@@ -8,9 +8,10 @@
         xmlns:vm="clr-namespace:Template.WPF.ViewModels"
         xmlns:nav="clr-namespace:Template.WPF.State.Navigators"
         xmlns:converters="clr-namespace:Template.WPF.Converters"
+        xmlns:controls="clr-namespace:Template.WPF.Controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        MinWidth="600" MinHeight="400">
+        MinWidth="600" MinHeight="400" WindowStyle="None">
     <Window.Resources>
         <converters:EqualValueToParameterConverter x:Key="EqualValueToParameterConverter" />
     </Window.Resources>
@@ -28,40 +29,20 @@
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Row="0" Grid.ColumnSpan="2" Background="#1976d2">
-            <StackPanel Orientation="Horizontal">
-                <CheckBox x:Name="cbToggleMenu" Margin="10" Style="{StaticResource MyCustomCheckboxStyle}" />
-                <!--<CheckBox x:Name="cbToggleMenu" Margin="10">
-                <CheckBox.Template>
-                <ControlTemplate TargetType="CheckBox">
-                <Grid Background="Transparent">
-                <Viewbox Width="25" Height="25">
-                <Path
-                Data="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-                Fill="White"
-                Stretch="Fill" />
-                </Viewbox>
-                </Grid>
-                </ControlTemplate>
-                </CheckBox.Template>
-                <CheckBox.Style>
-                <Style TargetType="CheckBox">
-                <Style.Triggers>
-                <DataTrigger Binding="{Binding IsLoggedIn, UpdateSourceTrigger=PropertyChanged}" Value="false">
-                <Setter Property="Visibility" Value="Collapsed" />
-                </DataTrigger>
-                <DataTrigger Binding="{Binding IsLoggedIn, UpdateSourceTrigger=PropertyChanged}" Value="true">
-                <Setter Property="Visibility" Value="Visible" />
-                <Setter Property="IsChecked" Value="True" />
-                </DataTrigger>
-                </Style.Triggers>
-                </Style>
-                </CheckBox.Style>
-                </CheckBox>-->
-                <TextBlock Padding="10"
-                           FontSize="25"
-                           Foreground="White"
-                           Text="My Application" />
-            </StackPanel>
+            <!-- Draggable area -->
+            <Border Background="Transparent"
+                    MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <CheckBox x:Name="cbToggleMenu" Margin="10" Style="{StaticResource MyCustomCheckboxStyle}" />
+                    <TextBlock Padding="10"
+                               FontSize="25"
+                               Foreground="White"
+                               Text="My Application" />
+                </StackPanel>
+            </Border>
+
+            <!-- Title bar buttons -->
+            <controls:TitleBarButtons HorizontalAlignment="Right" VerticalAlignment="Center" />
         </Grid>
 
         <Grid Grid.Row="1" Grid.Column="0">

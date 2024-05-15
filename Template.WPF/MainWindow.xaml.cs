@@ -22,8 +22,9 @@ namespace Template.WPF
             this.DataContext = dataContext;
         }
 
-        public MainWindow()
+        private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            this.DragMove();
         }
     }
 }
